@@ -1,6 +1,8 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1>Healthnet</h1>
 <p>Welcome to <em>Healthnet</em>, a Django-based medical records service brought to you by SWEN-261:07D.</p>
+{% load static  %}
+<script src="/js/three.min.js"></script>
+<script src="{% static '/js/UISphere.js' %}"></script>
 {% endblock %}
