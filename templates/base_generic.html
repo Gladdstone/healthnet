@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  
+  {% block title %}<title>Healthnet</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel = "stylesheet" href = "{% static 'css/styles.css' %}">
+
+  </head>
+
+<body>
+  <div>
+    <div class = "row">
+      <div>
+      {% block sidebar %}
+      <ul class = "sidebar-nav">
+          <li><a href = "{% url 'index' %}">Home</a></li>
+		  <li><a href = "{% url 'login' %}">Login</a></li>
+      </ul>
+     {% endblock %}
+      </div>
+      <div>
+      {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
