@@ -1,0 +1,17 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h1>Patient Registration</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% for name, value in basicInfo.items %}
+                    <li>{{ name }}: {{ value }}</li>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+        <input type="submit" name="update" value="Update Profile" />
+    </form>
+{% endblock %}

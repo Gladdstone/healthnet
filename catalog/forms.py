@@ -15,3 +15,11 @@ class PatientRegisterUserForm(forms.ModelForm):
         model = PatientRegisterInfo
         fields = (
         'username', 'password', 'email')
+
+class PatientUpdateBasicInfoForm(forms.ModelForm):
+
+    class Meta:
+        model = PatientProfileInfo
+        fields = (
+            'first_name', 'last_name', 'phone_number'
+        )

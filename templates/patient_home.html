@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+		<ul class = "sidebar_nav">
+			<li><a href = "{% url 'patient_profile' %}">Profile</a></li>
+
+		</ul>
+
+{% load static  %}
+<!--<script src="{% static '/js/three.min.js' %}"></script>
+<script src="{% static '/js/UISphere.js' %}"></script>-->
+{% endblock %}

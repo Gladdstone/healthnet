@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_REDIRECT_URL = 'index2'
+LOGIN_REDIRECT_URL = 'index'
 
 
 # Application definition
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'catalog.apps.CatalogConfig',
-    'patient.apps.PatientConfig',
+    'appointment.apps.AppointConfig'
 ]
 
 MIDDLEWARE_CLASSES = [

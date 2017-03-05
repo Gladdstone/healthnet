@@ -1,9 +1,28 @@
 from django.shortcuts import render, redirect
 from django.views import generic
-from .forms import PostForm
-from django.http import Http404
+from .forms import CreateAppointment
+from django.contrib.auth.models import User
+from .models import Appointment
+from django.forms.formsets import formset_factory
 
+class CreateAppointment(generic.ListView):
+    template_name = 'registration/patient_registration.html'
 
+    def create(request):
+        if request.method == "POST":
+            if "cancel" in request.POST:
+                return redirect('index')
+            form = CreateAppointment(request.POST)
+            if form.is_valid():
+                apptInfo = form.save(commit=False)
+                apptInfo.save()
+				
+                return redirect('index')
+        else:
+            form = CreateAppointment()
+        return render(request, '../templates/create_appointment.html', {'form': form})
+
+"""
 def appointments(request, appointments_date):
     try:
         a = appointments.objects.get(pk=appointments_date)
@@ -36,4 +55,4 @@ class Home(generic.ListView):
             request,
             'index.html',
         )
-
+"""

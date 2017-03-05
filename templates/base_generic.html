@@ -7,7 +7,7 @@
   {% block title %}<title>Healthnet</title>{% endblock %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- catalog/static/css/styles.css -->
   {% load static %}
   <link rel = "stylesheet" href = "{% static 'css/styles.css' %}">
@@ -15,13 +15,18 @@
   </head>
 
 <header>
-	<h1 id="title">Healthnet</h1>
+	<h1 id="title"><a href = "{% url 'index' %}">Healthnet</a></h1>
 	<div class = "header_row">
 		{% block sidebar %}
 		<ul class = "sidebar_nav">
-			<li><a href = "{% url 'index' %}">Home</a></li>
-			<li><a href = "{% url 'login' %}">Login</a></li>
-			<li><a href = "{% url 'patient_registration' %}">Register Patient</a></li>
+            {% if user.is_authenticated %}
+				<li><a href = "{% url 'appointments' %}">View Appointments</a></li>
+				<li><a href = "{% url 'create_appointment' %}">Create Appointment</a></li>
+                <li><a href = "{% url 'logout' %}">Logout</a></li>
+            {% else %}
+			    <li><a href = "{% url 'login' %}">Login</a></li>
+			    <li><a href = "{% url 'patient_registration' %}">Register Patient</a></li>
+            {% endif %}
 		</ul>
 		{% endblock %}
 	</div>
