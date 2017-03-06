@@ -5,9 +5,10 @@
         {% load static %}
         <link rel= "stylesheet" type="text/css" href = "{% static 'css/subtitles.css' %}">
     </head>
-    <h1 id =subtitle>Create Appointment</h1>
+    <h1 id="subtitle">Update Profile Information</h1>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
+        {{ form.as_p}}
+        <br/>
         <button type="submit" class="save btn btn-default">Save</button>
         <input type="submit" name="cancel" value="Cancel" />
     </form>

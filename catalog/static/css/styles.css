@@ -1,7 +1,7 @@
 #title {
 	text-shadow:3px 2px 0 rgba(5,5,5,0.8);
 	font-weight:bold;
-	text-decoration:underline overline;
+	text-decoration:underline;
 	font-variant:small-caps;
 	color:#940909;
 	letter-spacing:0pt;
@@ -9,7 +9,9 @@
 	font-size:54px;text-align:left;
 	font-family:palatino linotype, palatino, serif;
 	line-height:1;
+
 }
+
 
 .sidebar_nav li a {
     display: block;
@@ -30,3 +32,4 @@
 .sidebar_nav li {
 	list-style: none;
 }
+

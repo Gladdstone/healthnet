@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'catalog.apps.CatalogConfig',
-    'appointment.apps.AppointConfig'
+    'appointment.apps.AppointConfig',
 ]
 
 MIDDLEWARE_CLASSES = [

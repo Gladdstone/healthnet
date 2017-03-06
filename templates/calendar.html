@@ -1,0 +1,8 @@
+{% extends "base_generic.html" %}
+{#{% load calendar_tags %}#}
+{{% block content %}
+<br>
+<div class="calendar">
+	{{ calendar }}
+	{#{% appointment_calendar {% now "Y" %} {% now "m" %} %}#}
+{% endblock %}

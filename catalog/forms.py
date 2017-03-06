@@ -1,13 +1,14 @@
 from django import forms
 
-from .models import PatientProfileInfo, PatientRegisterInfo
+from .models import *
 
 class PatientRegisterProfileForm(forms.ModelForm):
 
     class Meta:
         model = PatientProfileInfo
         fields = (
-        'first_name', 'last_name', 'phone_number', 'insurance', 'pref_hospital', 'emergency_contact', 'medical_info')
+        'first_name', 'last_name', 'phone_number', 'insurance', 'pref_hospital', 'emergency_contact_first_name', 'emergency_contact_last_name', 'emergency_contact_email', 'medical_info')
+
 
 class PatientRegisterUserForm(forms.ModelForm):
 
@@ -21,5 +22,5 @@ class PatientUpdateBasicInfoForm(forms.ModelForm):
     class Meta:
         model = PatientProfileInfo
         fields = (
-            'first_name', 'last_name', 'phone_number'
+            'first_name', 'last_name', 'phone_number',
         )

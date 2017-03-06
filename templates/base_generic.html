@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
+<body vlink= #940909>
 <head>
   
   {% block title %}<title>Healthnet</title>{% endblock %}
@@ -10,16 +10,19 @@
 
   <!-- catalog/static/css/styles.css -->
   {% load static %}
-  <link rel = "stylesheet" href = "{% static 'css/styles.css' %}">
+  <link rel = "stylesheet" type="text/css" href = "{% static 'css/styles.css' %}">
 
   </head>
 
 <header>
-	<h1 id="title"><a href = "{% url 'index' %}">Healthnet</a></h1>
+	<h1 id="title"><a href = "{% url 'index' %}">Healthnet</a> </h1>
 	<div class = "header_row">
 		{% block sidebar %}
 		<ul class = "sidebar_nav">
             {% if user.is_authenticated %}
+                {% if user.first_name == 'patient' %}
+                    <li><a href = "{% url 'patient_profile' %}">Profile</a></li>
+                {%  endif %}
 				<li><a href = "{% url 'appointments' %}">View Appointments</a></li>
 				<li><a href = "{% url 'create_appointment' %}">Create Appointment</a></li>
                 <li><a href = "{% url 'logout' %}">Logout</a></li>
@@ -35,4 +38,5 @@
 <div>
 {% block content %}{% endblock %}
 </div>
+</body>
 </html>

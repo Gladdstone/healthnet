@@ -5,18 +5,21 @@
         {% load static %}
         <link rel= "stylesheet" type="text/css" href = "{% static 'css/subtitles.css' %}">
     </head>
-    <h1 id="subtitle">Patient Profile</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
+    <h1 id="subtitle">Appointments</h1>
+    {% for b in a %}
+        <p>Appointment: {{ b }}</p>
+        <p>Appointment: </p>
+    {% endfor %}
+    <p>Appointment:</p>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-                {% for name, value in basicInfo.items %}
-                    <p>{{ name }}: {{ value }}</p>
+                {% for b in appointments %}
+                    <p>Appointment: {{ b }}</p>
                 {% endfor %}
                 <br/>
                 </div>
             </div>
         </div>
-        <button name="update" value="Update Profile">Update</button>
-    </form>
+
 {% endblock %}

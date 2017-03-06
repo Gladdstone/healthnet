@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from django.views import generic
-from .forms import CreateAppointment
+from .forms import CreateAppointmentForm
 from django.contrib.auth.models import User
 from .models import Appointment
 from django.forms.formsets import formset_factory
-
+"""
 class CreateAppointment(generic.ListView):
     template_name = 'registration/patient_registration.html'
 
@@ -21,14 +21,15 @@ class CreateAppointment(generic.ListView):
         else:
             form = CreateAppointment()
         return render(request, '../templates/create_appointment.html', {'form': form})
-
 """
-def appointments(request, appointments_date):
+
+
+def appointments(request):#, appointments_date):
     try:
-        a = appointments.objects.get(pk=appointments_date)
-    except appointments.DoesNotExist:
-        raise Http404("Appointment does not exist")
-    return render(request, 'appointments.html', {'apppointments': a})
+        a = Appointment.objects.filter()#pk=appointments_date)
+    except Exception as e:
+        a = None
+    return render(request, 'appointments/appointment.html', {'appointments': a})
 
 
 class CreateAppointment(generic.ListView):
@@ -36,14 +37,14 @@ class CreateAppointment(generic.ListView):
         if request.method == "POST":
             if "cancel" in request.POST:
                 return redirect('home')
-            form = PostForm(request.POST)
+            form = CreateAppointmentForm(request.POST)
             if form.is_valid():
                 post = form.save(commit=False)
                 post.save()
-                return redirect('home', pk=post.pk)
+                return redirect('index')#, pk=post.pk)
         else:
             print(request.method)
-            form = PostForm()
+            form = CreateAppointmentForm()
         return render(request, '../templates/appointments/create_appointment.html', {'form': form})
 
 
@@ -55,4 +56,3 @@ class Home(generic.ListView):
             request,
             'index.html',
         )
-"""
