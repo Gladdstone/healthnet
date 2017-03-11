@@ -1,3 +1,4 @@
+/* Header: */
 #title {
 	text-shadow:3px 2px 0 rgba(5,5,5,0.8);
 	font-weight:bold;
@@ -11,7 +12,6 @@
 	line-height:1;
 
 }
-
 
 .sidebar_nav li a {
     display: block;
@@ -30,6 +30,74 @@
 }
 
 .sidebar_nav li {
+	list-style: none;
+}
+/* End of Header Styling */
+
+/* Calendar: */
+.c_day {
+	height: 8em;
+	width: 14.2857%;
+	vertical-align: top;
+}
+
+.c_filled {
+	background-color: #ddd;
+}
+
+.noday {
+	background-color: #555;
+}
+
+.c_day:hover {
+	background-color: #fee;
+}
+
+.c_filled:hover {
+	background-color: #cbb;
+}
+
+.noday:hover {
+	background-color: #555;
+}
+
+.c_day li {
+	list-style: none;
+}
+
+.c_day ul {
+	padding: 0 0 0 .5em;
+}
+
+.c_dcontent {
+	width: 100%;
+    height: 85%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.c_dnum {
+	width: 100%;
+    height: 15%;
+}
+
+table.month th {
+	background: #940909;
+}
+
+table.month th,td {
+	border: 1px solid black;
+}
+
+.calendar, .calendar table {
+	width: 100%;
+	height: 100%;
+}
+/* End of Calendar Styling */
+
+/* View Appointments: */
+#id_appointments {
 	list-style: none;
 }
 

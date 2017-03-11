@@ -20,10 +20,13 @@ from django.conf.urls import include
 from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
+from catalog import views
 
 urlpatterns = [
     url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout'),
+    url(r'^admin/syslog/$', views.view_syslog, name='view_syslog'),#TemplateView.as_view(template_name='logfile')),
     url(r'^admin/', admin.site.urls),
     url(r'^catalog/', include('catalog.urls')),
     #url(r'^patient/', include('patient.urls')),

@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
+from django.forms import widgets
+
 
 class PatientProfileInfo(models.Model):
 
@@ -25,6 +27,7 @@ class PatientProfileInfo(models.Model):
     emergency_contact = models.ForeignKey(User, unique=False, null=True, blank=True)
     medical_info = models.CharField(max_length=200, default="")
 
+
     # Metadata
     class Meta:
         ordering = ['last_name']#, '-dob', 'ssn']
@@ -36,6 +39,7 @@ class PatientProfileInfo(models.Model):
 class PatientRegisterInfo(models.Model):
     username = models.CharField(max_length=200, default="")
     password = models.CharField(max_length=200, default="")
+    re_enter_password = models.CharField(max_length=200, default="")
     email_regex = RegexValidator(regex=r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)',
                                  message="Email must be entered in the format: 'xxxx@yyyy.zzz'.")
     email = models.CharField(max_length=200, default="", validators=[email_regex])

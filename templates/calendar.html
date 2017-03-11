@@ -2,7 +2,12 @@
 {#{% load calendar_tags %}#}
 {{% block content %}
 <br>
-<div class="calendar">
+<head>
+	{% load static %}
+	<link rel= "stylesheet" type="text/css" href = "{% static 'css/subtitles.css' %}">
+</head>
+<h1 id="subtitle">Appointment Calendar</h1>
+<div id="calendar" class="calendar">
 	{{ calendar }}
-	{#{% appointment_calendar {% now "Y" %} {% now "m" %} %}#}
+	{#{% calendar {% now "Y" %} {% now "m" %} %}#}
 {% endblock %}

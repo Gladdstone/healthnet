@@ -1,0 +1,209 @@
+(0.002) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'x7wv0f4llshbbmtxj7qd3t8a0mx7tvsi' AND "django_session"."expire_date" > '2017-03-07 02:41:02.842654'); args=('x7wv0f4llshbbmtxj7qd3t8a0mx7tvsi', '2017-03-07 02:41:02.842654')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 50; args=(50,)
+"GET /catalog/ HTTP/1.1" 200 1025
+"GET /admin/syslog/ HTTP/1.1" 200 994
+(0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'x7wv0f4llshbbmtxj7qd3t8a0mx7tvsi' AND "django_session"."expire_date" > '2017-03-07 02:41:40.022755'); args=('x7wv0f4llshbbmtxj7qd3t8a0mx7tvsi', '2017-03-07 02:41:40.022755')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 50; args=(50,)
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\context.py", line 75, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in "[{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x047E9078>>, 'request': <WSGIRequest: GET '/admin/'>, 'user': <SimpleLazyObject: <User: admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0575E0B0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0481B430>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x042D52D0>, 'site_header': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x042D5310>, 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x04250D30>, 'app_label': 'admin', 'app_url': '/admin/admin/', 'has_module_perms': True, 'models': [{'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x057198F0>, 'object_name': 'LogEntry', 'perms': {'add': True, 'change': True, 'delete': True}, 'admin_url': '/admin/admin/logentry/', 'add_url': '/admin/admin/logentry/add/'}]}, {'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x042DD490>, 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x0477AC70>, 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}, {'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x05719150>, 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}]}], 'title': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x042D5350>, 'app_list': [{'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x04250D30>, 'app_label': 'admin', 'app_url': '/admin/admin/', 'has_module_perms': True, 'models': [{'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x0477AAB0>, 'object_name': 'LogEntry', 'perms': {'add': True, 'change': True, 'delete': True}, 'admin_url': '/admin/admin/logentry/', 'add_url': '/admin/admin/logentry/add/'}]}, {'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x042DD490>, 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x0481B330>, 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}, {'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x0477ADB0>, 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}]}], 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}]"
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\context.py", line 75, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in "[{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x047E9078>>, 'request': <WSGIRequest: GET '/admin/'>, 'user': <SimpleLazyObject: <User: admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0575E0B0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0481B430>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x042D52D0>, 'site_header': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x042D5310>, 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x04250D30>, 'app_label': 'admin', 'app_url': '/admin/admin/', 'has_module_perms': True, 'models': [{'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x057198F0>, 'object_name': 'LogEntry', 'perms': {'add': True, 'change': True, 'delete': True}, 'admin_url': '/admin/admin/logentry/', 'add_url': '/admin/admin/logentry/add/'}]}, {'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x042DD490>, 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x0477AC70>, 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}, {'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x05719150>, 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}]}], 'title': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x042D5350>, 'app_list': [{'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x04250D30>, 'app_label': 'admin', 'app_url': '/admin/admin/', 'has_module_perms': True, 'models': [{'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x0477AAB0>, 'object_name': 'LogEntry', 'perms': {'add': True, 'change': True, 'delete': True}, 'admin_url': '/admin/admin/logentry/', 'add_url': '/admin/admin/logentry/add/'}]}, {'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x042DD490>, 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x0481B330>, 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}, {'name': <django.utils.functional.lazy.<locals>.__proxy__ object at 0x0477ADB0>, 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/'}]}], 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}]"
+(0.002) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 50 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(50,)
+"GET /admin/ HTTP/1.1" 200 3449
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'x7wv0f4llshbbmtxj7qd3t8a0mx7tvsi' AND "django_session"."expire_date" > '2017-03-07 02:41:43.723360'); args=('x7wv0f4llshbbmtxj7qd3t8a0mx7tvsi', '2017-03-07 02:41:43.723360')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 50; args=(50,)
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 'x7wv0f4llshbbmtxj7qd3t8a0mx7tvsi'; args=('x7wv0f4llshbbmtxj7qd3t8a0mx7tvsi',)
+(0.000) BEGIN; args=None
+(0.002) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('x7wv0f4llshbbmtxj7qd3t8a0mx7tvsi'); args=('x7wv0f4llshbbmtxj7qd3t8a0mx7tvsi',)
+"GET /admin/logout/ HTTP/1.1" 200 741
+"GET /admin/syslog/ HTTP/1.1" 200 12669
+"GET /admin/syslog/ HTTP/1.1" 200 12709
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\core\handlers\base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\urls\resolvers.py", line 300, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<RegexURLPattern login ^login/$>], [<RegexURLPattern logout ^logout/$>], [<RegexURLPattern None ^admin/syslog/$>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'catalog.urls' from 'D:\\Users\\Gladdstone\\Documents\\SWEN\\project\\healthnet\\catalog\\urls.py'> (None:None) ^catalog/>], [<RegexURLPattern None ^$>], [<RegexURLPattern None ^static\/(?P<path>.*)$>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in '<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>'
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\core\handlers\base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\core\handlers\base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\urls\resolvers.py", line 300, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<RegexURLPattern login ^login/$>], [<RegexURLPattern logout ^logout/$>], [<RegexURLPattern None ^admin/syslog/$>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'catalog.urls' from 'D:\\Users\\Gladdstone\\Documents\\SWEN\\project\\healthnet\\catalog\\urls.py'> (None:None) ^catalog/>], [<RegexURLPattern None ^$>], [<RegexURLPattern None ^static\/(?P<path>.*)$>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Gladdstone\Envs\project\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in "<RegexURLResolver <module 'catalog.urls' from 'D:\\\\Users\\\\Gladdstone\\\\Documents\\\\SWEN\\\\project\\\\healthnet\\\\catalog\\\\urls.py'> (None:None) ^catalog/>"
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2639
+(0.002) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+"GET /catalog/ HTTP/1.1" 200 873
+"GET /static/css/styles.css HTTP/1.1" 304 0
+"GET /login/ HTTP/1.1" 200 1138
+(0.003) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'Bob123'; args=('Bob123',)
+(0.000) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'qj7yzn6q1pwsbmjatb6sme9eq2mupamf' LIMIT 1; args=('qj7yzn6q1pwsbmjatb6sme9eq2mupamf',)
+(0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'Bob123'; args=('Bob123',)
+(0.001) BEGIN; args=None
+(0.003) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT 'qj7yzn6q1pwsbmjatb6sme9eq2mupamf', 'MTc0YTYxOWU0MDM4MTNjZTk3MGRhYzgwM2RhNGIzMzdkODU3MjA4ZTp7fQ==', '2017-03-21 02:57:22.267260'; args=('qj7yzn6q1pwsbmjatb6sme9eq2mupamf', 'MTc0YTYxOWU0MDM4MTNjZTk3MGRhYzgwM2RhNGIzMzdkODU3MjA4ZTp7fQ==', '2017-03-21 02:57:22.267260')
+(0.000) BEGIN; args=None
+(0.002) UPDATE "auth_user" SET "last_login" = '2017-03-07 02:57:22.458395' WHERE "auth_user"."id" = 49; args=('2017-03-07 02:57:22.458395', 49)
+(0.000) BEGIN; args=None
+(0.175) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'fwdzh1uai130qlx4n5vmfvx1dgijs5rr' LIMIT 1; args=('fwdzh1uai130qlx4n5vmfvx1dgijs5rr',)
+(0.000) BEGIN; args=None
+(0.016) UPDATE "django_session" SET "session_data" = 'ZDM3YTM0ZjU1OWJmZjMyNDAxYjg2YzhlN2U3NTI2MDI3ZTExMTY3Yjp7Il9hdXRoX3VzZXJfaWQiOiI0OSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiYTVjZDdmMTNhZTMxNDUxNTc4OWViNTIzYmExZTg4NjY4OTBhYzAzMiJ9', "expire_date" = '2017-03-21 02:57:22.562468' WHERE "django_session"."session_key" = 'qj7yzn6q1pwsbmjatb6sme9eq2mupamf'; args=('ZDM3YTM0ZjU1OWJmZjMyNDAxYjg2YzhlN2U3NTI2MDI3ZTExMTY3Yjp7Il9hdXRoX3VzZXJfaWQiOiI0OSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiYTVjZDdmMTNhZTMxNDUxNTc4OWViNTIzYmExZTg4NjY4OTBhYzAzMiJ9', '2017-03-21 02:57:22.562468', 'qj7yzn6q1pwsbmjatb6sme9eq2mupamf')
+"POST /login/ HTTP/1.1" 302 0
+(0.125) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT 'fwdzh1uai130qlx4n5vmfvx1dgijs5rr', 'MTc0YTYxOWU0MDM4MTNjZTk3MGRhYzgwM2RhNGIzMzdkODU3MjA4ZTp7fQ==', '2017-03-21 02:57:22.565471'; args=('fwdzh1uai130qlx4n5vmfvx1dgijs5rr', 'MTc0YTYxOWU0MDM4MTNjZTk3MGRhYzgwM2RhNGIzMzdkODU3MjA4ZTp7fQ==', '2017-03-21 02:57:22.565471')
+"POST /login/ HTTP/1.1" 500 59
+(0.000) BEGIN; args=None
+(0.001) UPDATE "auth_user" SET "last_login" = '2017-03-07 02:57:22.791631' WHERE "auth_user"."id" = 49; args=('2017-03-07 02:57:22.791631', 49)
+(0.000) BEGIN; args=None
+(0.002) UPDATE "django_session" SET "session_data" = 'ZDM3YTM0ZjU1OWJmZjMyNDAxYjg2YzhlN2U3NTI2MDI3ZTExMTY3Yjp7Il9hdXRoX3VzZXJfaWQiOiI0OSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiYTVjZDdmMTNhZTMxNDUxNTc4OWViNTIzYmExZTg4NjY4OTBhYzAzMiJ9', "expire_date" = '2017-03-21 02:57:22.899707' WHERE "django_session"."session_key" = 'fwdzh1uai130qlx4n5vmfvx1dgijs5rr'; args=('ZDM3YTM0ZjU1OWJmZjMyNDAxYjg2YzhlN2U3NTI2MDI3ZTExMTY3Yjp7Il9hdXRoX3VzZXJfaWQiOiI0OSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiYTVjZDdmMTNhZTMxNDUxNTc4OWViNTIzYmExZTg4NjY4OTBhYzAzMiJ9', '2017-03-21 02:57:22.899707', 'fwdzh1uai130qlx4n5vmfvx1dgijs5rr')
+"POST /login/ HTTP/1.1" 302 0
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'fwdzh1uai130qlx4n5vmfvx1dgijs5rr' AND "django_session"."expire_date" > '2017-03-07 02:57:23.003807'); args=('fwdzh1uai130qlx4n5vmfvx1dgijs5rr', '2017-03-07 02:57:23.003807')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 49; args=(49,)
+"GET /catalog/ HTTP/1.1" 200 1052
+(0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'fwdzh1uai130qlx4n5vmfvx1dgijs5rr' AND "django_session"."expire_date" > '2017-03-07 02:58:20.641216'); args=('fwdzh1uai130qlx4n5vmfvx1dgijs5rr', '2017-03-07 02:58:20.641216')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 49; args=(49,)
+(0.000) SELECT "catalog_patientprofileinfo"."id", "catalog_patientprofileinfo"."user_id", "catalog_patientprofileinfo"."first_name", "catalog_patientprofileinfo"."last_name", "catalog_patientprofileinfo"."phone_number", "catalog_patientprofileinfo"."insurance", "catalog_patientprofileinfo"."pref_hospital", "catalog_patientprofileinfo"."emergency_contact_first_name", "catalog_patientprofileinfo"."emergency_contact_last_name", "catalog_patientprofileinfo"."emergency_contact_email", "catalog_patientprofileinfo"."emergency_contact_id", "catalog_patientprofileinfo"."medical_info" FROM "catalog_patientprofileinfo" WHERE "catalog_patientprofileinfo"."user_id" = 49; args=(49,)
+"GET /catalog/patient/profile HTTP/1.1" 200 2075
+"GET /static/css/subtitles.css HTTP/1.1" 304 0
+(0.004) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'fwdzh1uai130qlx4n5vmfvx1dgijs5rr' AND "django_session"."expire_date" > '2017-03-07 02:59:19.935434'); args=('fwdzh1uai130qlx4n5vmfvx1dgijs5rr', '2017-03-07 02:59:19.935434')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 49; args=(49,)
+(0.001) SELECT "appointment_appointment"."id", "appointment_appointment"."title", "appointment_appointment"."date", "appointment_appointment"."time", "appointment_appointment"."month", "appointment_appointment"."doctor", "appointment_appointment"."associated_patient_id", "appointment_appointment"."associated_doctor_id" FROM "appointment_appointment" WHERE "appointment_appointment"."associated_patient_id" = 49; args=(49,)
+"GET /catalog/appt/view/ HTTP/1.1" 200 1931
+(0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'fwdzh1uai130qlx4n5vmfvx1dgijs5rr' AND "django_session"."expire_date" > '2017-03-07 02:59:57.996657'); args=('fwdzh1uai130qlx4n5vmfvx1dgijs5rr', '2017-03-07 02:59:57.996657')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 49; args=(49,)
+(0.001) SELECT "appointment_appointment"."id", "appointment_appointment"."title", "appointment_appointment"."date", "appointment_appointment"."time", "appointment_appointment"."month", "appointment_appointment"."doctor", "appointment_appointment"."associated_patient_id", "appointment_appointment"."associated_doctor_id" FROM "appointment_appointment" WHERE ("appointment_appointment"."associated_patient_id" = 49 AND "appointment_appointment"."month" = 3); args=(49, 3)
+"GET /catalog/calendar/ HTTP/1.1" 200 2529
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'fwdzh1uai130qlx4n5vmfvx1dgijs5rr' AND "django_session"."expire_date" > '2017-03-07 03:00:43.317046'); args=('fwdzh1uai130qlx4n5vmfvx1dgijs5rr', '2017-03-07 03:00:43.317046')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 49; args=(49,)
+"GET /catalog/appt/create/ HTTP/1.1" 200 3588
+(0.004) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'fwdzh1uai130qlx4n5vmfvx1dgijs5rr' AND "django_session"."expire_date" > '2017-03-07 03:01:10.849541'); args=('fwdzh1uai130qlx4n5vmfvx1dgijs5rr', '2017-03-07 03:01:10.849541')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 49; args=(49,)
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 'fwdzh1uai130qlx4n5vmfvx1dgijs5rr'; args=('fwdzh1uai130qlx4n5vmfvx1dgijs5rr',)
+(0.000) BEGIN; args=None
+(0.366) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('fwdzh1uai130qlx4n5vmfvx1dgijs5rr'); args=('fwdzh1uai130qlx4n5vmfvx1dgijs5rr',)
+"GET /logout/ HTTP/1.1" 200 741

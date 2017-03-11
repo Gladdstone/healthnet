@@ -6,18 +6,16 @@
         <link rel= "stylesheet" type="text/css" href = "{% static 'css/subtitles.css' %}">
     </head>
     <h1 id="subtitle">Appointments</h1>
-    {% for b in a %}
-        <p>Appointment: {{ b }}</p>
-        <p>Appointment: </p>
-    {% endfor %}
-    <p>Appointment:</p>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-                {% for b in appointments %}
-                    <p>Appointment: {{ b }}</p>
-                {% endfor %}
-                <br/>
+                <form method="POST" class="post-form">{% csrf_token %}
+                    {{ form.as_p}}
+                    <br/>
+                        <input type="submit" name="update" value="Update" />
+                        <input type="submit" name="delete" value="Delete" />
+                    <br/>
+                </form>
                 </div>
             </div>
         </div>
