@@ -22,9 +22,19 @@
             {% if user.is_authenticated %}
                 {% if user.first_name == 'patient' %}
                     <li><a href = "{% url 'patient_profile' %}">Profile</a></li>
-                {%  endif %}
-				<li><a href = "{% url 'appointments' %}">View Appointments</a></li>
-				<li><a href = "{% url 'create_appointment' %}">Create Appointment</a></li>
+                    <li><a href = "{% url 'appointments' %}">View Appointments</a></li>
+				    <li><a href = "{% url 'calendar' %}">View Calendar</a></li>
+				    <li><a href = "{% url 'create_appointment' %}">Create Appointment</a></li>
+                {%  elif user.first_name == 'doctor' %}
+                    <li><a href = "{% url 'appointments' %}">View Appointments</a></li>
+                {%  elif user.first_name == 'nurse' %}
+                    <li><a href = "{% url 'select_doctor' %}">Select Doctor</a></li>
+                {%  elif user.first_name == 'admin' %}
+                    <li><a href = "{% url 'register_admin' %}">Register Admin</a></li>
+                    <li><a href = "{% url 'register_doctor' %}">Register Doctor</a></li>
+                    <li><a href = "{% url 'register_nurse' %}">Register Nurse</a></li>
+                {% endif %}
+
                 <li><a href = "{% url 'logout' %}">Logout</a></li>
             {% else %}
 			    <li><a href = "{% url 'login' %}">Login</a></li>

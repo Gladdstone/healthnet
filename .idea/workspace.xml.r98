@@ -25,130 +25,33 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-<<<<<<< .mine
-        <entry file="file://$PROJECT_DIR$/appointment/urls.py">
-||||||| .r77
-        <entry file="file://$PROJECT_DIR$/healthnet/urls.py">
-=======
         <entry file="file://$PROJECT_DIR$/catalog/urls.py">
->>>>>>> .r98
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< .mine
-            <state relative-caret-position="153">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appointment/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
-||||||| .r77
-            <state relative-caret-position="306">
-              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appointment/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appointment/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-=======
             <state relative-caret-position="119">
               <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
->>>>>>> .r98
               <folding>
-<<<<<<< .mine
-                <element signature="e#0#45#0" expanded="true" />
-||||||| .r77
-                <element signature="e#0#24#0" expanded="true" />
-=======
                 <element signature="e#0#32#0" expanded="true" />
->>>>>>> .r98
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< .mine
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appointment/models.py">
-||||||| .r77
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/appointment/urls.py">
-=======
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/healthnet/settings.py">
->>>>>>> .r98
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< .mine
-            <state relative-caret-position="221">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <marker date="1488813589640" expanded="false" signature="0:62" ph="import ..." />
-              </folding>
-||||||| .r77
-            <state relative-caret-position="153">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-=======
             <state relative-caret-position="216">
               <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
               <folding />
->>>>>>> .r98
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< .mine
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/appointment/forms.py">
-||||||| .r77
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appointment/views.py">
-=======
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/catalog/views.py">
->>>>>>> .r98
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< .mine
-            <state relative-caret-position="374">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-||||||| .r77
-            <state relative-caret-position="68">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
-=======
             <state relative-caret-position="221">
               <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding />
->>>>>>> .r98
             </state>
           </provider>
         </entry>
@@ -175,24 +78,6 @@
         <option value="$PROJECT_DIR$/catalog/urls.py" />
         <option value="$PROJECT_DIR$/healthnet/settings.py" />
         <option value="$PROJECT_DIR$/catalog/views.py" />
-<<<<<<< .mine
-        <option value="$PROJECT_DIR$/healthnet/urls.py" />
-        <option value="$PROJECT_DIR$/patient/forms.py" />
-        <option value="$PROJECT_DIR$/appointment/urls.py" />
-        <option value="$PROJECT_DIR$/catalog/urls.py" />
-        <option value="$PROJECT_DIR$/appointment/views.py" />
-        <option value="$PROJECT_DIR$/appointment/models.py" />
-        <option value="$PROJECT_DIR$/appointment/forms.py" />
-||||||| .r77
-        <option value="$PROJECT_DIR$/healthnet/urls.py" />
-        <option value="$PROJECT_DIR$/patient/forms.py" />
-        <option value="$PROJECT_DIR$/appointment/urls.py" />
-        <option value="$PROJECT_DIR$/appointment/views.py" />
-        <option value="$PROJECT_DIR$/catalog/urls.py" />
-        <option value="$PROJECT_DIR$/appointment/forms.py" />
-        <option value="$PROJECT_DIR$/appointment/models.py" />
-=======
->>>>>>> .r98
       </list>
     </option>
   </component>
@@ -515,7 +400,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14658849" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -608,17 +493,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-<<<<<<< .mine
-          <folding />
-||||||| .r77
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-=======
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
->>>>>>> .r98
         </state>
       </provider>
     </entry>
@@ -718,19 +595,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< .mine
-||||||| .r77
-    <entry file="file://$PROJECT_DIR$/patient/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-=======
     <entry file="file://$PROJECT_DIR$/templates/registration/admin_registration.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -738,7 +602,6 @@
         </state>
       </provider>
     </entry>
->>>>>>> .r98
     <entry file="file://$PROJECT_DIR$/healthnet/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -773,156 +636,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/healthnet/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< .mine
-        <state relative-caret-position="306">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/catalog/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appointment/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-||||||| .r77
-        <state relative-caret-position="119">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appointment/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appointment/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-=======
         <state relative-caret-position="442">
           <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
           <folding>
             <element signature="e#642#674#0" expanded="true" />
           </folding>
->>>>>>> .r98
         </state>
       </provider>
     </entry>
-<<<<<<< .mine
-    <entry file="file://$PROJECT_DIR$/patient/views.py">
-||||||| .r77
-    <entry file="file://$PROJECT_DIR$/appointment/models.py">
-=======
     <entry file="file://$PROJECT_DIR$/catalog/urls.py">
->>>>>>> .r98
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< .mine
-        <state relative-caret-position="17">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appointment/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-||||||| .r77
-        <state relative-caret-position="68">
-          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appointment/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-=======
         <state relative-caret-position="119">
           <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
->>>>>>> .r98
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< .mine
-    <entry file="file://$PROJECT_DIR$/appointment/models.py">
-||||||| .r77
-    <entry file="file://$PROJECT_DIR$/healthnet/urls.py">
-=======
     <entry file="file://$PROJECT_DIR$/catalog/views.py">
->>>>>>> .r98
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< .mine
-        <state relative-caret-position="221">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1488813589640" expanded="false" signature="0:62" ph="import ..." />
-          </folding>
-||||||| .r77
-        <state relative-caret-position="306">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-          <folding />
-=======
         <state relative-caret-position="221">
           <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
           <folding />
->>>>>>> .r98
-        </state>
-      </provider>
-    </entry>
-<<<<<<< .mine
-    <entry file="file://$PROJECT_DIR$/appointment/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-||||||| .r77
-    <entry file="file://$PROJECT_DIR$/appointment/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-=======
->>>>>>> .r98
-    <entry file="file://$PROJECT_DIR$/appointment/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

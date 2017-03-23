@@ -12,4 +12,8 @@ urlpatterns = [
     url(r'^patient/profile/update$', views.PatientProfile.update_basic, name='patient_profile_update'),
 	url(r'^calendar/$', views.calendar, name='calendar'),
 	url(r'^appt/', include('appointment.urls')),
+    url(r'^admin/register_admin', views.Admin.register_admin, name='register_admin'),
+    url(r'^admin/register_doctor', views.Admin.register_doctor, name='register_doctor'),
+    url(r'^admin/register_nurse', views.Admin.register_nurse, name='register_nurse'),
+    url(r'^nurse/select_doctor', views.Nurse.select_doctor, name='select_doctor'),
 ]
