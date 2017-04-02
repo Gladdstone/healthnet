@@ -27,14 +27,24 @@
 				    <li><a href = "{% url 'create_appointment' %}">Create Appointment</a></li>
                 {%  elif user.first_name == 'doctor' %}
                     <li><a href = "{% url 'appointments' %}">View Appointments</a></li>
+                    <li><a href = "{% url 'create_appointment' %}">Create Appointment</a></li>
+                    <li><a href = "{% url 'admit_patient' %}">Admit Patient</a></li>
+                    <li><a href = "{% url 'select_patient' %}">Edit Patient Medical Info</a></li>
                 {%  elif user.first_name == 'nurse' %}
                     <li><a href = "{% url 'select_doctor' %}">Select Doctor</a></li>
+                    <li><a href = "{% url 'appointments' %}">View Appointments</a></li>
+                    <li><a href = "{% url 'create_appointment' %}">Create Appointment</a></li>
+                    <li><a href = "{% url 'admit_patient' %}">Admit Patient</a></li>
+                    <li><a href = "{% url 'select_patient' %}">Edit Patient Medical Info</a></li>
                 {%  elif user.first_name == 'admin' %}
                     <li><a href = "{% url 'register_admin' %}">Register Admin</a></li>
                     <li><a href = "{% url 'register_doctor' %}">Register Doctor</a></li>
                     <li><a href = "{% url 'register_nurse' %}">Register Nurse</a></li>
+                    <li><a href = "{% url 'register_hospital' %}">Register Hospital</a></li>
+                    <li><a href = "{% url 'transfer_patient' %}">Transfer Patient</a></li>
                 {% endif %}
-
+                <li><a href = "{% url 'view_messages' %}">Private Messages</a></li>
+                <!--<li><a href = "{% url 'create_message' %}">Create Message</a></li>-->
                 <li><a href = "{% url 'logout' %}">Logout</a></li>
             {% else %}
 			    <li><a href = "{% url 'login' %}">Login</a></li>

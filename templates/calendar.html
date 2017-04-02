@@ -10,4 +10,7 @@
 <div id="calendar" class="calendar">
 	{{ calendar }}
 	{#{% calendar {% now "Y" %} {% now "m" %} %}#}
+	<script>
+	document.getElementById("m-post").innerHTML = document.getElementById("m-post").innerHTML.replace("CSRF","{% csrf_token %}");
+	</script>
 {% endblock %}

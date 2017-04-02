@@ -1,0 +1,17 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <head>
+        {% load static %}
+        <link rel= "stylesheet" type="text/css" href = "{% static 'css/subtitles.css' %}">
+    </head>
+    <h1 id="subtitle">{{ title }}</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        {{ form2.as_p }}
+        {{ form3.as_p }}
+        <br/>
+        <button type="submit" class="save btn btn-default">Save</button>
+        <input type="submit" name="cancel" value="Cancel" />
+    </form>
+{% endblock %}
