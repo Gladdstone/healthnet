@@ -12,11 +12,12 @@
                 <form method="POST" class="post-form">{% csrf_token %}
                     {{ form.as_p}}
                     <br/>
-                        <input type="submit" name="create" value="Create" />
-                        <input type="submit" name="update" value="Update" />
+                        <input class="button" type="submit" name="create" value="Create" />
+                        <input class="button" type="submit" name="update" value="Update" />
                         {% if user.first_name != 'nurse' %}
-                            <input type="submit" name="delete" value="Delete" />
+                            <input class="button" type="submit" name="delete" value="Delete" />
                         {%  endif %}
+                        <input class="button" type="submit" name="back" value="Back" />
                     <br/>
                 </form>
                 </div>

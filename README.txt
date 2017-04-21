@@ -2,7 +2,7 @@ README
 
 ===============================================================================
 Title: healthnet
-Contributors: Joe Farrell, Laura Michele, Jack Smith, Jason Menezes, Liam Smith
+Contributors: Joe Farrell, Laura Vannozzi, Jack Smith, Jason Menezes, Liam Smith
 Release: 1.0
 ===============================================================================
 

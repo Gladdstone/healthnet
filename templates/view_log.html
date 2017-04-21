@@ -1,0 +1,28 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <head>
+        {% load static %}
+        <link rel= "stylesheet" type="text/css" href = "{% static 'css/subtitles.css' %}">
+    </head>
+    <h1 id="subtitle">{{ title }}</h1>
+        <div class="content container">
+            <div class="row">	
+				<table>
+					<tr>
+						<th style="bold">User</th>
+						<th style="bold">Message</th>
+						<th style="bold">Time</th>
+					</tr>
+					{% for id in log %}
+					<tr>
+						<th>{{ id.user }}</th>
+						<th>{{ id.message }}</th>
+						<th>{{ id.time }}</th>
+					</tr>
+					{% endfor %}
+				</table>
+            </div>
+        </div>
+
+{% endblock %}

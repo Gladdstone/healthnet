@@ -6,6 +6,7 @@ from catalog.models import *
 from django.core.management.base import  BaseCommand
 
 
+
 class Command(BaseCommand):
 
 
@@ -53,7 +54,13 @@ def load_users():
     hospital.people.add(admin, doctor, nurse, patient)
     hospital.save()
 
+    stats = SysStats()
+    stats.hospital = hospital
+    stats.save()
 
+    stats2 = SysStats()
+    stats2.hospital = hospital2
+    stats2.save()
 
 def main():
     load_users()

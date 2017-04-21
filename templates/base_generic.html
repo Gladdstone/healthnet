@@ -13,50 +13,62 @@
   <link rel = "stylesheet" type="text/css" href = "{% static 'css/styles.css' %}">
 
   </head>
-
-<header>
-	<h1 id="title"><a href = "{% url 'index' %}">Healthnet</a> </h1>
-	<div class = "header_row">
-		{% block sidebar %}
-		<ul class = "sidebar_nav">
-            {% if user.is_authenticated %}
-                {% if user.first_name == 'patient' %}
-                    <li><a href = "{% url 'patient_profile' %}">Profile</a></li>
-                    <li><a href = "{% url 'appointments' %}">View Appointments</a></li>
-				    <li><a href = "{% url 'calendar' %}">View Calendar</a></li>
-				    <li><a href = "{% url 'create_appointment' %}">Create Appointment</a></li>
-                {%  elif user.first_name == 'doctor' %}
-                    <li><a href = "{% url 'appointments' %}">View Appointments</a></li>
-                    <li><a href = "{% url 'create_appointment' %}">Create Appointment</a></li>
-                    <li><a href = "{% url 'admit_patient' %}">Admit Patient</a></li>
-                    <li><a href = "{% url 'select_patient' %}">Edit Patient Medical Info</a></li>
-                {%  elif user.first_name == 'nurse' %}
-                    <li><a href = "{% url 'select_doctor' %}">Select Doctor</a></li>
-                    <li><a href = "{% url 'appointments' %}">View Appointments</a></li>
-                    <li><a href = "{% url 'create_appointment' %}">Create Appointment</a></li>
-                    <li><a href = "{% url 'admit_patient' %}">Admit Patient</a></li>
-                    <li><a href = "{% url 'select_patient' %}">Edit Patient Medical Info</a></li>
-                {%  elif user.first_name == 'admin' %}
-                    <li><a href = "{% url 'register_admin' %}">Register Admin</a></li>
-                    <li><a href = "{% url 'register_doctor' %}">Register Doctor</a></li>
-                    <li><a href = "{% url 'register_nurse' %}">Register Nurse</a></li>
-                    <li><a href = "{% url 'register_hospital' %}">Register Hospital</a></li>
-                    <li><a href = "{% url 'transfer_patient' %}">Transfer Patient</a></li>
-                {% endif %}
-                <li><a href = "{% url 'view_messages' %}">Private Messages</a></li>
-                <!--<li><a href = "{% url 'create_message' %}">Create Message</a></li>-->
-                <li><a href = "{% url 'logout' %}">Logout</a></li>
-            {% else %}
-			    <li><a href = "{% url 'login' %}">Login</a></li>
-			    <li><a href = "{% url 'patient_registration' %}">Register Patient</a></li>
-            {% endif %}
-		</ul>
-		{% endblock %}
+<div id="container">
+	<div id="header">
+		<div class = "header_row">
+			{% block sidebar %}
+			<ul class = "sidebar_nav">
+				{% if user.is_authenticated %}
+					{% if user.first_name == 'patient' %}
+						<li><a href = "{% url 'patient_profile' %}">Profile</a></li>
+						<li><a href = "{% url 'appointments' %}">View Appointments</a></li>
+						<li><a href = "{% url 'calendar' %}">View Calendar</a></li>
+						<li><a href = "{% url 'create_appointment' %}">Create Appointment</a></li>
+						<li><a href = "{% url 'view_tests' patient=None %}">Tests</a></li>
+						<li><a href = "{% url 'view_prescriptions' patient=None %}">Prescriptions</a></li>
+					{%  elif user.first_name == 'doctor' %}
+						<li><a href = "{% url 'appointments' %}">View Appointments</a></li>
+						<li><a href = "{% url 'calendar' %}">View Calendar</a></li>
+						<li><a href = "{% url 'create_appointment' %}">Create Appointment</a></li>
+						<li><a href = "{% url 'admit_patient' %}">Admit Patient</a></li>
+						<li><a href = "{% url 'discharge_patient' %}">Discharge Patient</a></li>
+						<li><a href = "{% url 'select_patient' redirectUrl='edit_medical_info' %}">Edit Patient Medical Info</a></li>
+						<li><a href = "{% url 'select_patient' redirectUrl='view_tests' %}">Tests</a></li>
+						<li><a href = "{% url 'select_patient' redirectUrl='create_prescriptions' %}">Prescriptions</a></li>
+					{%  elif user.first_name == 'nurse' %}
+						<li><a href = "{% url 'select_doctor' %}">Select Doctor</a></li>
+						<li><a href = "{% url 'appointments' %}">View Appointments</a></li>
+						<li><a href = "{% url 'calendar' %}">View Calendar</a></li>
+						<li><a href = "{% url 'create_appointment' %}">Create Appointment</a></li>
+						<li><a href = "{% url 'admit_patient' %}">Admit Patient</a></li>
+						<li><a href = "{% url 'select_patient' redirectUrl='edit_medical_info' %}">Edit Patient Medical Info</a></li>
+					{%  elif user.first_name == 'admin' %}
+						<li><a href = "{% url 'register_admin' %}">Register Admin</a></li>
+						<li><a href = "{% url 'register_doctor' %}">Register Doctor</a></li>
+						<li><a href = "{% url 'register_nurse' %}">Register Nurse</a></li>
+						<li><a href = "{% url 'register_hospital' %}">Register Hospital</a></li>
+						<li><a href = "{% url 'transfer_patient' %}">Transfer Patient</a></li>
+                        <li><a href = "{% url 'view_log' %}">View Log</a></li>
+                        <li><a href = "{% url 'view_statistics' %}">View Statistics</a></li>
+					{% endif %}
+					<li><a href = "{% url 'view_messages' %}">Private Messages</a></li>
+					<!--<li><a href = "{% url 'create_message' %}">Create Message</a></li>-->
+					<li><a href = "{% url 'logout' %}">Logout</a></li>
+				{% else %}
+					<li><a href = "{% url 'login' %}">Login</a></li>
+					<li><a href = "{% url 'patient_registration' %}">Register Patient</a></li>
+				{% endif %}
+			</ul>
+			{% endblock %}
+		</div>
+		<h1 id="title" style="background-image: url('{% static 'healthnet_hospital2.png' %}')"><a href = "{% url 'index' %}"><img src="{% static 'Healthnet_logo with_nametag.png' %}" alt = "Healthnet" /></a> </h1>
 	</div>
-	<br>
-</header>
-<div>
-{% block content %}{% endblock %}
+	<div id="content">
+	{% block content %}{% endblock %}
+	</div>
+	<div id="footer">
+	<p><em>Healthnet</em>, a Django-based medical records service brought to you by SWEN-261:07D.</p>
+	</div>
 </div>
 </body>
 </html>

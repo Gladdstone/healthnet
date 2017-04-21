@@ -1,0 +1,29 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <head>
+        {% load static %}
+        <link rel= "stylesheet" type="text/css" href = "{% static 'css/subtitles.css' %}">
+    </head>
+    <h1 id="subtitle">{{ name }}'s Tests</h1>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                <form method="POST" class="post-form">{% csrf_token %}
+                    {{ form.as_p}}
+                    <br/>
+                        {% if user.first_name == 'doctor' %}
+                            <input class="button" type="submit" name="create" value="Create" />
+                            <input class="button" type="submit" name="update" value="Update" />
+                            <input class="button" type="submit" name="delete" value="Delete" />
+                        {% else %}
+                            <input class="button" type="submit" name="view" value="View" />
+                        {% endif %}
+                        <input class="button" type="submit" name="back" value="Back" />
+                    <br/>
+                </form>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

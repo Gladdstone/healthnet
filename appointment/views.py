@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render, redirect
 from django.views import generic
 from .forms import CreateAppointmentForm, ChooseAppointmentForm
@@ -19,7 +20,8 @@ class Appointment(generic.ListView):
         """
         #print('create')
 
-
+        if (not request.user.is_authenticated()):
+            raise Http404
         if (request.user.first_name == 'nurse'):
             user = request.user.nurse_user_profile.current_doctor
         else:
@@ -31,7 +33,7 @@ class Appointment(generic.ListView):
             #Appointment.objects.all().delete()
             #print(request.POST)
             if "cancel" in request.POST:
-                return redirect('home')
+                return redirect('index')
             form = CreateAppointmentForm(request.POST, hospital=user.hospital_set.all(), user=user) # ***PLACEHOLDER***
             if (user.first_name == 'doctor'):
                 doctor = user
@@ -42,8 +44,8 @@ class Appointment(generic.ListView):
             #doctor = request.POST.get('doctor')
             #patient = request.POST.get('patient')
 
-            if form.is_valid(doctor=doctor, patient=patient, title=request.POST.get('title'), date_year=request.POST.get('date_year'),
-                             date_month=request.POST.get('date_month'), date_day=request.POST.get('date_day'), time=request.POST.get('time'), this = None):# and not title_exists(request.user, request.POST.get('title')):
+            if form.is_valid(doctor=doctor, patient=patient, date_year=request.POST.get('date_year'),
+                             date_month=request.POST.get('date_month'), date_day=request.POST.get('date_day'), time=request.POST.get('time'), this = None):
                 post = form.save(commit=False)
                 if(user.first_name == 'doctor'):
                     patient = User.objects.get(username=request.POST.get('patient'))
@@ -78,19 +80,21 @@ class Appointment(generic.ListView):
             form = CreateAppointmentForm(hospital=user.hospital_set.all(), user=user) # ***PLACEHOLDER***
         return render(request, 'form_generic.html', {'form': form, 'title': 'Create Appointment'})
 
-    def update(request, title, username):
+    def update(request, id, username):
         """
         Update a specific appointment to a user in the database. The database removes and re-adds the appointment if it is updated because that was how I could get it to work
-        :param appointment: appointment title to update
+        :param id: appointment to update
+        :param username: username of user whose appointment is getting updated
         :return: redirects user to template to either go home when completed or prompt for appointment updating
         """
 
-
+        if (not request.user.is_authenticated()):
+            raise Http404
         user = User.objects.get(username=username)
         if(user.first_name == 'doctor'):
-            appointment = user.doctor_appointment.get(title=title)
+            appointment = user.doctor_appointment.get(id=id)
         else:
-            appointment = user.patient_appointment.get(title=title)
+            appointment = user.patient_appointment.get(id=id)
 
 
 
@@ -98,17 +102,15 @@ class Appointment(generic.ListView):
             #print('updating')
             # Appointment.objects.all().delete()
             if "cancel" in request.POST:
-                return redirect('home')
+                return redirect('index')
             form = CreateAppointmentForm(request.POST, hospital=user.hospital_set.all(), user=user) # ***PLACEHOLDER***
-            #temp = request.user.patient_appointment.filter(title=appointment)
-            #request.user.patient_appointment.filter(title=appointment).delete()
             doctor = request.POST.get('doctor')
             print(doctor)
             patient = request.POST.get('patient')
-            if form.is_valid(doctor=doctor, patient=patient, title=request.POST.get('title'),
+            if form.is_valid(doctor=doctor, patient=patient,
                              date_year=request.POST.get('date_year'),
                              date_month=request.POST.get('date_month'), date_day=request.POST.get('date_day'),
-                             time=request.POST.get('time'), this = appointment):  # and not title_exists(request.user, request.POST.get('title')):
+                             time=request.POST.get('time'), this = appointment):
                 post = form.save(commit=False)
 
                 if (user.first_name == 'doctor'):
@@ -138,8 +140,12 @@ class Appointment(generic.ListView):
         View the appointments. Gives option to update or delete as well
         :return: renders a request to redirect user to viewing appointment template
         """
+        if (not request.user.is_authenticated()):
+            raise Http404
         if(request.user.first_name == 'nurse'):
             user = request.user.nurse_user_profile.current_doctor
+            if user == None:
+                return redirect('select_doctor')
         else:
             user = request.user
 
@@ -153,10 +159,12 @@ class Appointment(generic.ListView):
 
 
         if request.method == 'POST':
+            if 'back' in request.POST:
+                return redirect('index')
             if 'delete' in request.POST:
                 form = ChooseAppointmentForm(request.POST, user=user)
                 if form.is_valid():
-                    appointment_list.filter(title=request.POST.get('appointments')).delete()
+                    appointment_list.filter(id=request.POST.get('appointments')).delete()
                 form = ChooseAppointmentForm(user=user)
             elif 'create' in request.POST:
                 return redirect('create_appointment')
@@ -164,7 +172,7 @@ class Appointment(generic.ListView):
                 #print(request.user.patient_user_profile)
                 form = ChooseAppointmentForm(request.POST, user=user)
                 if form.is_valid():
-                    appointment = appointment_list.get(title=request.POST.get('appointments'))
+                    appointment = appointment_list.get(id=request.POST.get('appointments'))
                     request.method = 'GET'
                     return redirect('update_appointment', appointment, user)
         else:
@@ -176,31 +184,3 @@ class Appointment(generic.ListView):
                 a = None
         return render(request, 'appointments/appointment.html', {'form': form, 'name': name, 'user':request.user}) # in this case, user is the literal user of the program who is logged in
 
-
-
-class Home(generic.ListView):
-    """
-    Direct to the home page
-    """
-    template_name = 'base_generic.html'
-
-    def index(request):
-        return render(
-            request,
-            'index.html',
-        )
-
-def title_exists(user, title):
-    """
-
-    :param user: the user the appointment is associated with
-    :param title: the title of the appointment
-    :return: if the user has an appointment with the specific title
-    """
-    try:
-        i = user.patient_appointment.filter(title=title)
-        if(len(i)>0):
-            return True
-        return False
-    except Exception as e:
-        return False

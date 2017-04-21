@@ -1,32 +1,114 @@
-/* Header: */
+.bcolor1 {
+	/*Orange*/
+	background-color: #fb7011;
+}
+
+.bcolor2 {
+	/*Blue*/
+	background-color: #52b4db;
+}
+
+.bcolor3 {
+	/*Ivory*/
+	background-color: #fffeef;
+}
+
+.bcolor4 {
+	/*White*/
+	background-color: #ffffff;
+}
+
 #title {
-	text-shadow:3px 2px 0 rgba(5,5,5,0.8);
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	border-bottom: 3px solid #3090d0;
+}
+
+#title img {
+	max-width: 100%;
+	height: auto;
+	width: 75%;
+	padding: 0;
+	vertical-align: bottom;
+}
+
+html,
+body {
+	font-family:  "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	margin:0;
+	padding:0;
+	height:100%;
+}
+#container {
+	min-height:100%;
+	position:relative;
+	background-color: #fffeef;
+}
+#header {
+	background:#fffeef;
+}
+#content {
+	padding-left:10px;
+	padding-bottom:5.2%;
+	background-color: #fffeef;
+}
+#footer {
+	padding: 0;
+	margin: 0;
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height: 6vh;
+	background:#52b4db;
+	text-align: center;
+	border-top: 3px solid #3090d0;
+}
+
+#footer p {
+	font-size: 1.2vw;
+}
+
+#subtitle {
 	font-weight:bold;
 	text-decoration:underline;
-	font-variant:small-caps;
-	color:#940909;
+	font-variant:normal;
+	color:#52b4db;
 	letter-spacing:0pt;
 	word-spacing:2pt;
-	font-size:54px;text-align:left;
-	font-family:palatino linotype, palatino, serif;
+	font-size:30px;text-align:left;
+	font-family:  "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 	line-height:1;
+}
 
+/* Header: */
+.header_row {
+	overflow: auto;
+	padding: 0;
+	margin: 0;
+	border-bottom: 3px solid #3090d0;
+	background-color: #52b4db;
+}
+
+.sidebar_nav {
+	margin: 0;
 }
 
 .sidebar_nav li a {
     display: block;
     float: left;
-    padding: .5em .6em;
+    padding: 1em .5em 1em .5em;
     text-transform: uppercase;
     text-decoration: none;
-    color: #550055;
+    color: black;
     border-radius: .3em;
     font-size: .8em;
+	font-family:  "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
 .sidebar_nav li a:hover {
-    background: #940909;
-    color: #fff;
+    background: #fb7011;
+    color: black;
 }
 
 .sidebar_nav li {
@@ -39,6 +121,7 @@
 	height: 8em;
 	width: 14.2857%;
 	vertical-align: top;
+	background-color: white;
 }
 
 .c_filled {
@@ -50,11 +133,11 @@
 }
 
 .c_day:hover {
-	background-color: #fee;
+	background-color: #fffeef;
 }
 
 .c_filled:hover {
-	background-color: #cbb;
+	background-color: #eeedde;
 }
 
 .noday:hover {
@@ -83,7 +166,7 @@
 }
 
 table.month th {
-	background: #940909;
+	background: #fb7011;
 }
 
 table.month th,td {
@@ -91,13 +174,44 @@ table.month th,td {
 }
 
 .calendar, .calendar table {
-	width: 100%;
+	width: 95%;
 	height: 100%;
 }
+
+.c_select {
+	border: 0;
+	color: black;
+	background: transparent;
+	font-size: 20px;
+	font-weight: bold;
+	-webkit-appearance: none;
+}
 /* End of Calendar Styling */
+
+.button {
+	background-color: #fb7011;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.button:hover {
+	background-color: #52b4db;
+}
+
+input, textarea, select, button, meter, progress {
+	font-family:  "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
 
 /* View Appointments: */
 #id_appointments {
 	list-style: none;
 }
 
+#id_appointments li label {
+	list-style: none;
+}

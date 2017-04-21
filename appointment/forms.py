@@ -6,16 +6,19 @@ from django.contrib.auth.models import User
 import datetime
 
 from catalog.models import Hospital
-from .models import Appointment, AppointmentSelect
+from .models import Appointment
 
 
 class CreateAppointmentForm(forms.ModelForm):
+    """
+    Form for a user to create an appointment
+    """
     day = datetime.date.today()
     date = forms.DateField(widget=extras.SelectDateWidget, initial= day)
     #doctor = forms.ChoiceField(choices=(('doctor_1', 'Doctor 1'), ('doctor_2', 'Doctor 2'),))
     class Meta:
         model = Appointment
-        fields = ('title', 'date', 'time', 'doctor', 'patient')
+        fields = ('title', 'date', 'time', 'doctor', 'patient', 'description')
 
     def __init__(self, *args, **kwargs):
         hospitals = (kwargs.pop('hospital').all())
@@ -49,11 +52,13 @@ class CreateAppointmentForm(forms.ModelForm):
             self.fields['doctor'] = forms.CharField(initial= user ,widget=forms.TextInput(attrs={'readonly':'readonly'}))
             self.fields['patient'] = forms.ChoiceField(choices=choices)
             self.fields['doctor'].required = False
+        self.fields['description'] = forms.CharField(widget=forms.Textarea(attrs={'rows': 5, 'cols': 40, 'style': 'resize:none;'}))
+        self.fields['description'].label = 'Description or Symptoms (Optional)'
 
     def is_valid(self, **kwargs):
         doctor = User.objects.get(username=kwargs.pop('doctor'))
         patient = User.objects.get(username=kwargs.pop('patient'))
-        title = kwargs.pop('title')
+        #title = kwargs.pop('title')
         date_month = kwargs.pop('date_month')
         date_year = kwargs.pop('date_year')
         date_day = kwargs.pop('date_day')
@@ -69,14 +74,14 @@ class CreateAppointmentForm(forms.ModelForm):
             return valid
         try:
 
-            i = patient.patient_appointment.filter(title=title)
-            j = doctor.doctor_appointment.filter(title=title)
+            """i = patient.patient_appointment.filter(id=title)
+            j = doctor.doctor_appointment.filter(id=title)
             if (len(i) > 0 and (this==None or title != this.title)):
                 self._errors['title'] = ["Patient already has appointment with that title"]
                 return False
             elif (len(j) > 0 and (this==None or title != this.title)):
                 self._errors['title'] = ["Doctor already has appointment with that title"]
-                return False
+                return False"""
 
             patient_appointments = patient.patient_appointment.filter(month= date_month,
                                     year = date_year,
@@ -113,19 +118,9 @@ class CreateAppointmentForm(forms.ModelForm):
         #self.fields['mydatetime'].widget = widgets.AdminSplitDateTime()"""
 
 class ChooseAppointmentForm(forms.Form):
-    """def __init__(self, user, *args, **kwargs):
-        self.user = user
-        super(ChooseAppointmentForm, self).__init__(*args, **kwargs)
-        self.choices = self.user.patient.all()
-        #self.fields['appt'].choices = self.choices
-        #self.fields['appt'].widget = forms.RadioSelect()
-        appt = forms.RadioSelect(choices=self.choices)
-
-    class Meta:
-        model = AppointmentSelect
-        fields = ('appt',)"""
-
-
+    """
+    Form for a user to choose an appointment
+    """
     def __init__(self, *args, **kwargs):
         """
         Finds all of a users appointments and adds them to the 'appointments' field

@@ -1,0 +1,21 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <head>
+        {% load static %}
+        <link rel= "stylesheet" type="text/css" href = "{% static 'css/subtitles.css' %}">
+    </head>
+    <h1 id="subtitle">{{ request.user.username }}'s Prescriptions</h1>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% for pre in prescriptions%}
+                        <p>Prescription: {{pre.name}}</p>
+                        <p>Notes: {{pre.notes}}</p>
+                        <p>Patient: {{pre.associated_patient}}</p>
+                        <p>Doctor: {{pre.associated_doctor}}</p>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+{% endblock %}
